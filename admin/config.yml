@@ -1,0 +1,17 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "products/images"   # যেখানেই তুমি image রাখবে repo তে
+public_folder: "/products/images" # front-end এ image path
+
+collections:
+  - name: "products"             # collection নাম
+    label: "Products"            # CMS এ display label
+    folder: "products"           # GitHub repo তে folder
+    create: true                 # নতুন entry add করা যাবে
+    slug: "{{slug}}"             # URL-friendly slug
+    fields:
+      - {label: "Name", name: "name", widget: "string"}
+      - {label: "Price", name: "price", widget: "number"}
+      - {label: "Image URL", name: "image", widget: "string"}
